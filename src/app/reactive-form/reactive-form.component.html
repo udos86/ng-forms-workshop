@@ -1,10 +1,10 @@
-<div class="container-fluid container-scroll " style="overflow: auto;">
+<div class="container-fluid container-scroll overflow-hidden" [@fadeIn]="" [@fadeOut]="">
 
-  <div class="sample-form-container">
+  <div class="form-container">
 
-    <h1 class="text-center">Model-Driven Form</h1>
+    <h1 class="text-center">Reactive Form</h1>
 
-    <form class="form-horizontal" [formGroup]="formGroup">
+    <form class="form-horizontal" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
       <!-- TITLE -->
       <div class="form-group">
@@ -78,11 +78,12 @@
 
       </div>
 
-      <button type="submit" class="btn btn-primary col-sm-offset-2" [disabled]="!formGroup.valid" (click)="formGroup.reset()">Senden</button>
+      <button type="submit" class="btn btn-primary col-sm-offset-2" [disabled]="!formGroup.valid">Senden</button>
 
     </form>
 
     <pre>{{formGroup.value | json}}</pre>
 
   </div>
+  
 </div>

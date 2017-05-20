@@ -11,14 +11,18 @@ a.active {
     text-decoration: underline;
 }
 
-.sample-form-container {
+.form-container {
     margin: 0 auto;
     max-width: 560px; 
 }
 
-.sample-form-container > h1 {
+.form-container > h1 {
     margin-top: 0;
     margin-bottom: 4rem;
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }
 
 button[type="submit"] {

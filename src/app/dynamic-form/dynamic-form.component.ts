@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from "@angular/forms";
 import { DynamicFormControlModel, DynamicFormService } from "@ng2-dynamic-forms/core";
-import { FORM_MODEL } from './sample-dynamic-forms.model';
+import { fadeIn, fadeOut } from './../animations';
+import { FORM_MODEL } from './dynamic-form.model';
 
 @Component({
-  selector: 'app-sample-dynamic-forms',
-  templateUrl: './sample-dynamic-forms.component.html',
-  styleUrls: ['./sample-dynamic-forms.component.css']
+  selector: 'dynamic-forms',
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.css'],
+  animations: [fadeIn, fadeOut]
 })
-export class SampleDynamicFormsComponent implements OnInit {
+export class DynamicFormComponent implements OnInit {
 
   formModel: DynamicFormControlModel[] = FORM_MODEL;
   formGroup: FormGroup;
@@ -19,4 +21,7 @@ export class SampleDynamicFormsComponent implements OnInit {
     this.formGroup = this.formService.createFormGroup(this.formModel);
   }
 
+  onSubmit() {
+    this.formGroup.reset();
+  }
 }

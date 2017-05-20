@@ -1,25 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SampleFormsComponent } from './sample-forms/sample-forms.component';
-import { SampleReactiveFormsComponent } from './sample-reactive-forms/sample-reactive-forms.component';
-import { SampleDynamicFormsComponent } from './sample-dynamic-forms/sample-dynamic-forms.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 const APP_ROUTES: Routes = [
     {
         path: "",
-        redirectTo: "/sample-forms",
+        redirectTo: "/template-form",
         pathMatch: "full"
     },
     {
-        path: "sample-forms",
-        component: SampleFormsComponent,
+        path: "template-form",
+        component: TemplateFormComponent,
     },
     {
-        path: "sample-reactive-forms",
-        component: SampleReactiveFormsComponent,
+        path: "reactive-form",
+        component: ReactiveFormComponent,
     }, {
-        path: "sample-dynamic-forms",
-        component: SampleDynamicFormsComponent,
+        path: "dynamic-form",
+        component: DynamicFormComponent,
     }
 ];
 

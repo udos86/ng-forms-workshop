@@ -1,0 +1,19 @@
+<div class="container-fluid container-scroll overflow-hidden" [@fadeIn]="" [@fadeOut]="">
+  
+  <div class="form-container">
+
+    <h1 class="text-center">Dynamic Form</h1>
+
+    <form class="form-horizontal" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+      <dynamic-form-bootstrap-control *ngFor="let controlModel of formModel" [group]="formGroup" [model]="controlModel" [hasErrorMessaging]="controlModel.hasErrorMessages"></dynamic-form-bootstrap-control>
+
+      <button type="submit" class="btn btn-primary col-sm-offset-2" [disabled]="!formGroup.valid">Senden</button>
+
+    </form>
+
+    <pre>{{formGroup.value | json}}</pre>
+
+  </div>
+
+</div>

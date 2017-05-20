@@ -12,8 +12,5 @@ export class ValidationMessageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.control);
-  }
-
+  ngOnInit() { }
 }

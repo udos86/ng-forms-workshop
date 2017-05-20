@@ -1,8 +1,8 @@
-import { 
-    DynamicFormControlModel, 
-    DynamicSelectModel, 
-    DynamicInputModel, 
-    DynamicFormGroupModel, 
+import {
+    DynamicFormControlModel,
+    DynamicSelectModel,
+    DynamicInputModel,
+    DynamicFormGroupModel,
     DynamicCheckboxModel
 } from "@ng2-dynamic-forms/core";
 
@@ -50,7 +50,13 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
         {
             id: "firstName",
             label: "Vorname",
-            placeholder: "Vorname"
+            placeholder: "Vorname",
+            validators: {
+                required: null
+            },
+            errorMessages: {
+                required: "Field {{id}} is required"
+            }
         },
         {
             element: {
@@ -58,7 +64,8 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
             },
             grid: {
                 label: "col-sm-2",
-                control: "col-sm-10"
+                control: "col-sm-10",
+                errors: "col-sm-10 col-sm-offset-2"
             }
         }
     ),
@@ -67,7 +74,13 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
         {
             id: "lastName",
             label: "Nachname",
-            placeholder: "Nachname"
+            placeholder: "Nachname",
+            validators: {
+                required: null
+            },
+            errorMessages: {
+                required: "Field {{id}} is required"
+            }
         },
         {
             element: {
@@ -75,7 +88,8 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
             },
             grid: {
                 label: "col-sm-2",
-                control: "col-sm-10"
+                control: "col-sm-10",
+                errors: "col-sm-10 col-sm-offset-2"
             }
         }
     ),
