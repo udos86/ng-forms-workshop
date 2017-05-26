@@ -40,7 +40,7 @@
 
         <label for="lastName" class="col-sm-2 control-label">Nachname</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Nachname" required [(ngModel)]="formModel.lastName"
+          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Nachname" required forbidden="Trump" [(ngModel)]="formModel.lastName"
             #inputLastName="ngModel">
           <!-- VALIDATION MESSAGE APPROACH B: Encapsulated logic in a custom component -->
           <validation-message [control]="inputLastName.control"></validation-message>

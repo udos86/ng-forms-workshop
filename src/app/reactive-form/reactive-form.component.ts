@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { fadeIn, fadeOut } from './../animations';
+import { customForbiddenValidator } from "app/validation/custom-forbidden-validator.directive";
 
 @Component({
   selector: 'reactive-form',
@@ -20,7 +21,7 @@ export class ReactiveFormComponent implements OnInit {
 
       title: null,
       firstName: [null, Validators.required],
-      lastName: [null, Validators.required],
+      lastName: [null, Validators.compose([Validators.required, customForbiddenValidator("Trump")])],
       email: null,
       address: this.formBuilder.group({
         zipCode: null,

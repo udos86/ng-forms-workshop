@@ -2,7 +2,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, NG_VALIDATORS } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { DynamicFormsCoreModule } from '@ng2-dynamic-forms/core';
 import { DynamicFormsBootstrapUIModule } from '@ng2-dynamic-forms/ui-bootstrap';
@@ -13,7 +13,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 import { ValidationMessageComponent } from './validation/validation-message/validation-message.component';
-import { CustomEqualsValidatorDirective } from './validation/custom-equals-validator.directive';
+import { CustomForbiddenValidatorDirective, customForbiddenValidator } from './validation/custom-forbidden-validator.directive';
+import { DynamicValidationMessageDirective } from './validation/dynamic-validation-message.directive';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { CustomEqualsValidatorDirective } from './validation/custom-equals-valid
     TemplateFormComponent,
     ReactiveFormComponent,
     DynamicFormComponent,
-    CustomEqualsValidatorDirective,
-    ValidationMessageComponent
+    ValidationMessageComponent,
+    CustomForbiddenValidatorDirective,
+    DynamicValidationMessageDirective
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { CustomEqualsValidatorDirective } from './validation/custom-equals-valid
     DynamicFormsBootstrapUIModule,
     AppRoutingModule
   ],
-  providers: [],
+  entryComponents: [ValidationMessageComponent],
+  providers: [{ provide: NG_VALIDATORS, useValue: customForbiddenValidator, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

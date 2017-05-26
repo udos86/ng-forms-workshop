@@ -76,10 +76,12 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
             label: "Nachname",
             placeholder: "Nachname",
             validators: {
-                required: null
+                required: null,
+                customForbiddenValidator: "Trump"
             },
             errorMessages: {
-                required: "Field {{id}} is required"
+                required: "Field is required",
+                forbidden: "Current value of field is forbidden"
             }
         },
         {
