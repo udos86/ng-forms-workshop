@@ -49,11 +49,13 @@
       </div>
 
       <!-- EMAIL -->
-      <div class="form-group">
+      <div class="form-group" [class.has-error]="!inputEmail.valid && inputEmail.touched">
 
         <label for="email" class="col-sm-2 control-label">E-Mail</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="email" name="email" placeholder="E-Mail" [(ngModel)]="formModel.email">
+          <!-- VALIDATION MESSAGE APPROACH C: Dynamic component -->
+          <input type="text" class="form-control" id="email" name="email" placeholder="E-Mail" required [(ngModel)]="formModel.email"
+          #inputEmail="ngModel" [dynamicValidationMessage]="inputEmail" >
         </div>
 
       </div>
