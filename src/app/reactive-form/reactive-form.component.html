@@ -23,11 +23,13 @@
       </div>
 
       <!-- FIRST NAME -->
-      <div class="form-group">
+      <div class="form-group" [class.has-error]="!formGroup.get('firstName').valid && formGroup.get('firstName').touched">
 
         <label for="firstName" class="col-sm-2 control-label">Vorname</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="Vorname">
+          <!-- VALIDATION MESSAGE APPROACH A: Direct static template logic -->
+          <p *ngIf="formGroup.get('firstName').hasError('required') && formGroup.get('firstName').touched" class="help-block">Field is required</p>
         </div>
 
       </div>
@@ -41,15 +43,16 @@
           <!-- VALIDATION MESSAGE APPROACH B: Encapsulated logic in a custom component -->
           <validation-message [control]="formGroup.get('lastName')"></validation-message>
         </div>
-        
+
       </div>
 
       <!-- EMAIL -->
-      <div class="form-group">
+      <div class="form-group" [class.has-error]="!formGroup.get('email').valid && formGroup.get('email').touched">
 
         <label for="email" class="col-sm-2 control-label">E-Mail</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="email" formControlName="email" placeholder="E-Mail">
+          <!-- VALIDATION MESSAGE APPROACH C: Dynamic component -->
+          <input type="text" class="form-control" id="email" formControlName="email" placeholder="E-Mail" [dynamicValidationMessage]="formGroup.get('email')">
         </div>
 
       </div>

@@ -30,7 +30,7 @@
           <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Vorname" required [(ngModel)]="formModel.firstName"
             #inputFirstName="ngModel">
           <!-- VALIDATION MESSAGE APPROACH A: Direct static template logic -->
-          <p *ngIf="inputFirstName.hasError('required') && inputFirstName.touched" class="help-block">Bitte geben Sie Ihren Vornamen an</p>
+          <p *ngIf="inputFirstName.hasError('required') && inputFirstName.touched" class="help-block">Field is required</p>
         </div>
 
       </div>
