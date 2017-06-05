@@ -3,6 +3,7 @@ import { FormGroup } from "@angular/forms";
 import { DynamicFormControlModel, DynamicFormService } from "@ng2-dynamic-forms/core";
 import { fadeIn, fadeOut } from './../animations';
 import { FORM_MODEL } from './dynamic-form.model';
+import { customAsyncFormGroupValidator } from '../validation/custom-async-form-group-validator';
 
 @Component({
   selector: 'dynamic-forms',
@@ -18,7 +19,7 @@ export class DynamicFormComponent implements OnInit {
   constructor(private formService: DynamicFormService) { }
 
   ngOnInit() {
-    this.formGroup = this.formService.createFormGroup(this.formModel);
+    this.formGroup = this.formService.createFormGroup(this.formModel, { asyncValidator: customAsyncFormGroupValidator });
   }
 
   onSubmit() {
