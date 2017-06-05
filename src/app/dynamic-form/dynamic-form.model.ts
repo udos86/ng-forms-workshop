@@ -10,28 +10,28 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
 
     new DynamicSelectModel(
         {
-            id: "title",
-            label: "Position",
+            id: "degree",
+            label: "Degree",
             options: [
                 {
-                    label: "Mitarbeiter",
-                    value: "employee"
+                    label: "Bachelor of Arts (B.A.)",
+                    value: "BA"
                 },
                 {
-                    label: "Teamleiter",
-                    value: "team-lead"
+                    label: "Bachelor of Science (B.S.)",
+                    value: "BS"
                 },
                 {
-                    label: "Abteilungsleiter",
-                    value: "department-lead"
+                    label: "Master of Arts (M.A.)",
+                    value: "MA"
                 },
                 {
-                    label: "Hauptabteilungsleiter",
-                    value: "main-department-lead"
+                    label: "Master of Science (M.S.)",
+                    value: "MS"
                 },
                 {
-                    label: "Vorstand",
-                    value: "chairman"
+                    label: "Doctor of Philosophy (Ph.D.)",
+                    value: "PhD"
                 }
             ]
         },
@@ -40,7 +40,7 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
                 label: "control-label"
             },
             grid: {
-                label: "col-sm-2",
+                label: "col-sm-3",
                 control: "col-sm-5"
             }
         }
@@ -49,13 +49,13 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
     new DynamicInputModel(
         {
             id: "firstName",
-            label: "Vorname",
-            placeholder: "Vorname",
+            label: "First Name",
+            placeholder: "First Name",
             validators: {
                 required: null
             },
             errorMessages: {
-                required: "Field {{id}} is required"
+                required: "Field {{ id }} is required"
             }
         },
         {
@@ -63,9 +63,9 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
                 label: "control-label"
             },
             grid: {
-                label: "col-sm-2",
-                control: "col-sm-10",
-                errors: "col-sm-10 col-sm-offset-2"
+                label: "col-sm-3",
+                control: "col-sm-9",
+                errors: "col-sm-9 col-sm-offset-3"
             }
         }
     ),
@@ -73,8 +73,8 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
     new DynamicInputModel(
         {
             id: "lastName",
-            label: "Nachname",
-            placeholder: "Nachname",
+            label: "Last Name",
+            placeholder: "Last Name",
             validators: {
                 required: null,
                 customForbiddenValidator: "Trump"
@@ -89,9 +89,9 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
                 label: "control-label"
             },
             grid: {
-                label: "col-sm-2",
-                control: "col-sm-10",
-                errors: "col-sm-10 col-sm-offset-2"
+                label: "col-sm-3",
+                control: "col-sm-9",
+                errors: "col-sm-9 col-sm-offset-3"
             }
         }
     ),
@@ -107,8 +107,8 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
                 label: "control-label"
             },
             grid: {
-                label: "col-sm-2",
-                control: "col-sm-10"
+                label: "col-sm-3",
+                control: "col-sm-9"
             }
         }
     ),
@@ -120,15 +120,15 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
                 new DynamicInputModel(
                     {
                         id: "zipCode",
-                        label: "PLZ",
-                        placeholder: "PLZ"
+                        label: "Zip Code",
+                        placeholder: "ZIP"
                     },
                     {
                         element: {
                             label: "control-label"
                         },
                         grid: {
-                            label: "col-sm-2",
+                            label: "col-sm-3",
                             control: "col-sm-2"
                         }
                     }
@@ -137,8 +137,8 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
                 new DynamicInputModel(
                     {
                         id: "city",
-                        label: "Ort",
-                        placeholder: "Ort"
+                        label: "City",
+                        placeholder: "City"
                     },
                     {
                         element: {
@@ -146,7 +146,7 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
                         },
                         grid: {
                             label: "col-sm-1",
-                            control: "col-sm-7"
+                            control: "col-sm-6"
                         }
                     }
                 )
@@ -156,12 +156,12 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
 
     new DynamicCheckboxModel(
         {
-            id: "accept",
-            label: "Einverstanden"
+            id: "confirm",
+            label: "Confirm"
         },
         {
             grid: {
-                control: "col-sm-offset-2 col-sm-10"
+                control: "col-sm-offset-3 col-sm-10"
             }
         }
     )

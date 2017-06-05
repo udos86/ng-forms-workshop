@@ -14,7 +14,7 @@ export class TemplateFormComponent implements OnInit {
 
   formModel: any = {
 
-    title: null,
+    degree: null,
     firstName: null,
     lastName: null,
     email: null,
@@ -22,7 +22,7 @@ export class TemplateFormComponent implements OnInit {
       zipCode: null,
       city: null
     },
-    accept: null
+    confirm: null
   };
 
   constructor() { }

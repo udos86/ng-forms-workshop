@@ -20,7 +20,7 @@ export class ReactiveFormComponent implements OnInit {
 
     this.formGroup = this.formBuilder.group(
       {
-        title: null,
+        degree: null,
         firstName: [null, Validators.required],
         lastName: [null, Validators.compose([Validators.required, customForbiddenValidator("Trump")])],
         email: [null, Validators.required],
@@ -28,7 +28,7 @@ export class ReactiveFormComponent implements OnInit {
           zipCode: null,
           city: null,
         }),
-        accept: null
+        confirm: null
       },
       {
         validator: null,

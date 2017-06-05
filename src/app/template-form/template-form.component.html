@@ -6,17 +6,17 @@
 
     <form class="form-horizontal" (ngSubmit)="onSubmit()" #form="ngForm">
 
-      <!-- TITLE -->
+      <!-- DEGREE -->
       <div class="form-group">
 
-        <label for="title" class="col-sm-2 control-label">Position</label>
-        <div class="col-sm-5">
-          <select class="form-control" id="title" name="title" [(ngModel)]="formModel.title">
-          <option value="employee">Mitarbeiter</option>
-          <option value="team-lead">Teamleiter</option>
-          <option value="department-lead">Abteilungsleiter</option>
-          <option value="main-department-lead">Hauptabteilungsleiter</option>
-          <option value="chairman">Vorstand</option>
+        <label for="degree" class="col-sm-3 control-label">Degree</label>
+        <div class="col-sm-6">
+          <select class="form-control" id="degree" name="degree" [(ngModel)]="formModel.degree">
+            <option value="BA">Bachelor of Arts (B.A.)</option>
+            <option value="BS">Bachelor of Science (B.S.)</option>
+            <option value="MA">Master of Arts (M.A.)</option>
+            <option value="MS">Master of Science (M.S.)</option>
+            <option value="PhD">Doctor of Philosophy (Ph.D.)</option>
         </select>
         </div>
 
@@ -25,9 +25,9 @@
       <!-- FIRST NAME -->
       <div class="form-group" [class.has-error]="!inputFirstName.valid && inputFirstName.touched">
 
-        <label for="firstName" class="col-sm-2 control-label">Vorname</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Vorname" required [(ngModel)]="formModel.firstName"
+        <label for="firstName" class="col-sm-3 control-label">First Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required [(ngModel)]="formModel.firstName"
             #inputFirstName="ngModel">
           <!-- VALIDATION MESSAGE APPROACH A: Direct static template logic -->
           <p *ngIf="inputFirstName.hasError('required') && inputFirstName.touched" class="help-block">Field is required</p>
@@ -38,9 +38,9 @@
       <!-- LAST NAME -->
       <div class="form-group" [class.has-error]="!inputLastName.valid && inputLastName.touched">
 
-        <label for="lastName" class="col-sm-2 control-label">Nachname</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Nachname" required forbidden="Trump" [(ngModel)]="formModel.lastName"
+        <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required forbidden="Trump" [(ngModel)]="formModel.lastName"
             #inputLastName="ngModel">
           <!-- VALIDATION MESSAGE APPROACH B: Encapsulated logic in a custom component -->
           <validation-message [control]="inputLastName.control"></validation-message>
@@ -51,8 +51,8 @@
       <!-- EMAIL -->
       <div class="form-group" [class.has-error]="!inputEmail.valid && inputEmail.touched">
 
-        <label for="email" class="col-sm-2 control-label">E-Mail</label>
-        <div class="col-sm-10">
+        <label for="email" class="col-sm-3 control-label">E-Mail</label>
+        <div class="col-sm-9">
           <!-- VALIDATION MESSAGE APPROACH C: Dynamic component -->
           <input type="text" class="form-control" id="email" name="email" placeholder="E-Mail" required [(ngModel)]="formModel.email"
           #inputEmail="ngModel" [dynamicValidationMessage]="inputEmail" >
@@ -63,14 +63,14 @@
       <!-- ZIP CODE / CITY -->
       <div class="form-group" ngModelGroup="address">
 
-        <label for="zipCode" class="col-sm-2 control-label">PLZ</label>
+        <label for="zipCode" class="col-sm-3 control-label">Zip Code</label>
         <div class="col-sm-2">
-          <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="PLZ" [(ngModel)]="formModel.address.zipCode">
+          <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="ZIP" [(ngModel)]="formModel.address.zipCode">
         </div>
 
-        <label for="city" class="col-sm-1 control-label">Ort</label>
-        <div class="col-sm-7">
-          <input type="text" class="form-control" id="city" name="city" placeholder="Ort" [(ngModel)]="formModel.address.city">
+        <label for="city" class="col-sm-1 control-label">City</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="city" name="city" placeholder="City" [(ngModel)]="formModel.address.city">
         </div>
 
       </div>
@@ -78,15 +78,15 @@
       <!-- ACCEPT -->
       <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-10">
+        <div class="col-sm-offset-3 col-sm-10">
           <div class="checkbox">
-            <label><input type="checkbox" name="accept" [(ngModel)]="formModel.accept">Einverstanden</label>
+            <label><input type="checkbox" name="accept" [(ngModel)]="formModel.confirm">Confirm</label>
           </div>
         </div>
 
       </div>
 
-      <button type="submit" class="btn btn-primary col-sm-offset-2" [disabled]="!form.form.valid">Senden</button>
+      <button type="submit" class="btn btn-primary col-sm-offset-3" [disabled]="!form.form.valid">Send</button>
 
     </form>
 

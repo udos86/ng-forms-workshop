@@ -8,7 +8,7 @@
 
       <dynamic-form-bootstrap-control *ngFor="let controlModel of formModel" [group]="formGroup" [model]="controlModel" [hasErrorMessaging]="controlModel.hasErrorMessages"></dynamic-form-bootstrap-control>
 
-      <button type="submit" class="btn btn-primary col-sm-offset-2" [disabled]="!formGroup.valid">Senden</button>
+      <button type="submit" class="btn btn-primary col-sm-offset-3" [disabled]="!formGroup.valid">Send</button>
 
     </form>
 

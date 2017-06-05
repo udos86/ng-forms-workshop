@@ -6,17 +6,17 @@
 
     <form class="form-horizontal" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
-      <!-- TITLE -->
+      <!-- DEGREE -->
       <div class="form-group">
 
-        <label for="title" class="col-sm-2 control-label">Position</label>
+        <label for="degree" class="col-sm-3 control-label">Degree</label>
         <div class="col-sm-5">
-          <select class="form-control" id="title" formControlName="title">
-            <option value="employee">Mitarbeiter</option>
-            <option value="team-lead">Teamleiter</option>
-            <option value="department-lead">Abteilungsleiter</option>
-            <option value="main-department-lead">Hauptabteilungsleiter</option>
-            <option value="chairman">Vorstand</option>
+          <select class="form-control" id="title" formControlName="degree">
+            <option value="BA">Bachelor of Arts (B.A.)</option>
+            <option value="BS">Bachelor of Science (B.S.)</option>
+            <option value="MA">Master of Arts (M.A.)</option>
+            <option value="MS">Master of Science (M.S.)</option>
+            <option value="PhD">Doctor of Philosophy (Ph.D.)</option>
           </select>
         </div>
 
@@ -25,9 +25,9 @@
       <!-- FIRST NAME -->
       <div class="form-group" [class.has-error]="!formGroup.get('firstName').valid && formGroup.get('firstName').touched">
 
-        <label for="firstName" class="col-sm-2 control-label">Vorname</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="Vorname">
+        <label for="firstName" class="col-sm-3 control-label">First Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="First Name">
           <!-- VALIDATION MESSAGE APPROACH A: Direct static template logic -->
           <p *ngIf="formGroup.get('firstName').hasError('required') && formGroup.get('firstName').touched" class="help-block">Field is required</p>
         </div>
@@ -37,9 +37,9 @@
       <!-- LAST NAME -->
       <div class="form-group" [class.has-error]="!formGroup.get('lastName').valid && formGroup.get('lastName').touched">
 
-        <label for="lastName" class="col-sm-2 control-label">Nachname</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Nachname">
+        <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Last Name">
           <!-- VALIDATION MESSAGE APPROACH B: Encapsulated logic in a custom component -->
           <validation-message [control]="formGroup.get('lastName')"></validation-message>
         </div>
@@ -49,8 +49,8 @@
       <!-- EMAIL -->
       <div class="form-group" [class.has-error]="!formGroup.get('email').valid && formGroup.get('email').touched">
 
-        <label for="email" class="col-sm-2 control-label">E-Mail</label>
-        <div class="col-sm-10">
+        <label for="email" class="col-sm-3 control-label">E-Mail</label>
+        <div class="col-sm-9">
           <!-- VALIDATION MESSAGE APPROACH C: Dynamic component -->
           <input type="text" class="form-control" id="email" formControlName="email" placeholder="E-Mail" [dynamicValidationMessage]="formGroup.get('email')">
         </div>
@@ -60,14 +60,14 @@
       <!-- ZIP CODE / CITY -->
       <div class="form-group" formGroupName="address">
 
-        <label for="zipCode" class="col-sm-2 control-label">PLZ</label>
+        <label for="zipCode" class="col-sm-3 control-label">Zip Code</label>
         <div class="col-sm-2">
-          <input type="text" class="form-control" id="zipCode" formControlName="zipCode" placeholder="PLZ">
+          <input type="text" class="form-control" id="zipCode" formControlName="zipCode" placeholder="ZIP">
         </div>
 
-        <label for="city" class="col-sm-1 control-label">Ort</label>
-        <div class="col-sm-7">
-          <input type="text" class="form-control" id="city" formControlName="city" placeholder="Ort">
+        <label for="city" class="col-sm-1 control-label">City</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="city" formControlName="city" placeholder="City">
         </div>
 
       </div>
@@ -75,15 +75,15 @@
       <!-- ACCEPT -->
       <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-10">
+        <div class="col-sm-offset-3 col-sm-10">
           <div class="checkbox">
-            <label><input type="checkbox" formControlName="accept">Einverstanden</label>
+            <label><input type="checkbox" formControlName="confirm">Confirm</label>
           </div>
         </div>
 
       </div>
 
-      <button type="submit" class="btn btn-primary col-sm-offset-2" [disabled]="!formGroup.valid">Senden</button>
+      <button type="submit" class="btn btn-primary col-sm-offset-3" [disabled]="!formGroup.valid">Send</button>
 
     </form>
 
