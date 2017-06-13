@@ -22,7 +22,8 @@ export class TemplateFormComponent implements OnInit {
       zipCode: null,
       city: null
     },
-    confirm: null
+    confirm: null,
+    //random: null
   };
 
   constructor() { }
