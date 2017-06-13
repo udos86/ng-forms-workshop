@@ -16,6 +16,7 @@ import { ValidationMessageComponent } from './validation/validation-message/vali
 import { CustomForbiddenValidatorDirective, customForbiddenValidator } from './validation/custom-forbidden-validator.directive';
 import { DynamicValidationMessageDirective } from './validation/dynamic-validation-message.directive';
 import { customAsyncFormGroupValidator } from "app/validation/custom-async-form-group-validator";
+import { CustomFormControlComponent } from './custom-form-control/custom-form-control.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { customAsyncFormGroupValidator } from "app/validation/custom-async-form-
     DynamicFormComponent,
     ValidationMessageComponent,
     CustomForbiddenValidatorDirective,
-    DynamicValidationMessageDirective
+    DynamicValidationMessageDirective,
+    CustomFormControlComponent
   ],
   imports: [
     BrowserModule,
