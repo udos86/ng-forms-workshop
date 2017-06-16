@@ -22,13 +22,12 @@ export class TemplateFormComponent implements OnInit {
       zipCode: null,
       city: null
     },
-    confirm: null,
-    //random: null
+    confirm: null
   };
 
   constructor() { }
 
-  ngOnInit() {console.log(this.form); }
+  ngOnInit() { }
 
   onSubmit() {
     this.form.reset();
