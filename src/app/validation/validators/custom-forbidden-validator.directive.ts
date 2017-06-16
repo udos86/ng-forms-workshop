@@ -1,11 +1,11 @@
-import { Directive, forwardRef, OnInit, Input, Attribute } from '@angular/core';
-import { NG_VALIDATORS, Validator, AbstractControl, ValidationErrors } from '@angular/forms';
+import { Directive, forwardRef, OnChanges, Input, Attribute } from '@angular/core';
+import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 
-export function customForbiddenValidator(forbidden: string) {
+export function customForbiddenValidator(forbiddenValue: string): ValidatorFn {
 
   return (control: AbstractControl): ValidationErrors | null => {
 
-    if (control && control.value === forbidden) {
+    if (control && control.value === forbiddenValue) {
       return { forbidden: true };
     }
 
@@ -19,7 +19,7 @@ export function customForbiddenValidator(forbidden: string) {
     { provide: NG_VALIDATORS, useExisting: forwardRef(() => CustomForbiddenValidatorDirective), multi: true }
   ]
 })
-export class CustomForbiddenValidatorDirective implements Validator, OnInit {
+export class CustomForbiddenValidatorDirective implements Validator, OnChanges {
 
   @Input() forbidden: string;
 
@@ -27,7 +27,7 @@ export class CustomForbiddenValidatorDirective implements Validator, OnInit {
 
   constructor(/*@Attribute('forbidden') public forbidden: string*/) { }
 
-  ngOnInit() {
+  ngOnChanges() {
     this.validatorFn = customForbiddenValidator(this.forbidden);
   }
 

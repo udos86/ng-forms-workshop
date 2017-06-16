@@ -55,7 +55,7 @@
         <div class="col-sm-9">
           <!-- VALIDATION MESSAGE APPROACH C: Dynamic component -->
           <input type="text" class="form-control" id="email" name="email" placeholder="E-Mail" required [(ngModel)]="formModel.email"
-          #inputEmail="ngModel" [dynamicValidationMessage]="inputEmail" >
+          #inputEmail="ngModel" [dynamicValidationMessage]="inputEmail.control" >
         </div>
 
       </div>

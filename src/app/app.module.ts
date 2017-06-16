@@ -13,9 +13,9 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 import { ValidationMessageComponent } from './validation/validation-message/validation-message.component';
-import { CustomForbiddenValidatorDirective, customForbiddenValidator } from './validation/custom-forbidden-validator.directive';
-import { DynamicValidationMessageDirective } from './validation/dynamic-validation-message.directive';
-import { customAsyncFormGroupValidator } from "app/validation/custom-async-form-group-validator";
+import { CustomForbiddenValidatorDirective, customForbiddenValidator } from './validation/validators/custom-forbidden-validator.directive';
+import { DynamicValidationMessageDirective } from './validation/validation-message/dynamic-validation-message.directive';
+import { customAsyncFormGroupValidator } from "app/validation/validators/custom-async-form-group-validator";
 import { CustomFormControlComponent } from './custom-form-control/custom-form-control.component';
 
 @NgModule({

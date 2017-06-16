@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { fadeIn, fadeOut } from './../animations';
-import { customForbiddenValidator } from '../validation/validators/custom-forbidden-validator.directive';
-import { customAsyncFormGroupValidator } from '../validation/validators/custom-async-form-group-validator';
 
 @Component({
   selector: 'reactive-form',
@@ -21,18 +19,14 @@ export class ReactiveFormComponent implements OnInit {
     this.formGroup = this.formBuilder.group(
       {
         degree: null,
-        firstName: [null, Validators.required],
-        lastName: [null, Validators.compose([Validators.required, customForbiddenValidator("Trump")])],
-        email: [null, Validators.required],
+        firstName: null,
+        lastName: null,
+        email: null,
         address: this.formBuilder.group({
           zipCode: null,
           city: null,
         }),
         confirm: null
-      },
-      {
-        validator: null,
-        asyncValidator: customAsyncFormGroupValidator
       }
     );
   }

@@ -1,6 +1,6 @@
 import { Directive, Input, ViewContainerRef, HostListener, ComponentFactoryResolver, ComponentFactory, ComponentRef } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { ValidationMessageComponent } from './validation-message/validation-message.component';
+import { ValidationMessageComponent } from './validation-message.component';
 
 @Directive({
   selector: '[dynamicValidationMessage]'
