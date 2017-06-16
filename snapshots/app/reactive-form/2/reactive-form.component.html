@@ -2,22 +2,22 @@
 
   <div class="form-container">
 
-    <h1 class="text-center">Template Form</h1>
+    <h1 class="text-center">Reactive Form</h1>
 
-    <form class="form-horizontal" (ngSubmit)="form.reset()" #form="ngForm">
+    <form class="form-horizontal">
 
       <!-- DEGREE -->
       <div class="form-group">
 
         <label for="degree" class="col-sm-3 control-label">Degree</label>
-        <div class="col-sm-6">
-          <select class="form-control" id="degree" name="degree" [(ngModel)]="degree">
+        <div class="col-sm-5">
+          <select class="form-control" id="title">
             <option value="BA">Bachelor of Arts (B.A.)</option>
             <option value="BS">Bachelor of Science (B.S.)</option>
             <option value="MA">Master of Arts (M.A.)</option>
             <option value="MS">Master of Science (M.S.)</option>
             <option value="PhD">Doctor of Philosophy (Ph.D.)</option>
-        </select>
+          </select>
         </div>
 
       </div>
@@ -27,7 +27,7 @@
 
         <label for="firstName" class="col-sm-3 control-label">First Name</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" [(ngModel)]="firstName">
+          <input type="text" class="form-control" id="firstName" placeholder="First Name">
         </div>
 
       </div>
@@ -37,7 +37,7 @@
 
         <label for="lastName" class="col-sm-3 control-label">Last Name</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" [(ngModel)]="lastName">
+          <input type="text" class="form-control" id="lastName" placeholder="Last Name">
         </div>
 
       </div>
@@ -47,22 +47,22 @@
 
         <label for="email" class="col-sm-3 control-label">E-Mail</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="email" name="email" placeholder="E-Mail" [(ngModel)]="email">
+          <input type="text" class="form-control" id="email" placeholder="E-Mail">
         </div>
 
       </div>
 
       <!-- ZIP CODE / CITY -->
-      <div class="form-group" ngModelGroup="address">
+      <div class="form-group">
 
         <label for="zipCode" class="col-sm-3 control-label">Zip Code</label>
         <div class="col-sm-2">
-          <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="ZIP" [(ngModel)]="zipCode">
+          <input type="text" class="form-control" id="zipCode" placeholder="ZIP">
         </div>
 
         <label for="city" class="col-sm-1 control-label">City</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="city" name="city" placeholder="City" [(ngModel)]="city">
+          <input type="text" class="form-control" id="city" placeholder="City">
         </div>
 
       </div>
@@ -72,17 +72,15 @@
 
         <div class="col-sm-offset-3 col-sm-10">
           <div class="checkbox">
-            <label><input type="checkbox" name="accept" [(ngModel)]="formModel.confirm">Confirm</label>
+            <label><input type="checkbox">Confirm</label>
           </div>
         </div>
 
       </div>
 
-      <button type="submit" class="btn btn-primary col-sm-offset-3" [disabled]="!form.valid">Send</button>
+      <button type="submit" class="btn btn-primary col-sm-offset-3">Send</button>
 
     </form>
-
-    <pre>{{form.value | json}}</pre>
 
   </div>
 

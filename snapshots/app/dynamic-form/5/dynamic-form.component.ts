@@ -19,7 +19,7 @@ export class DynamicFormComponent implements OnInit {
   constructor(private formService: DynamicFormService) { }
 
   ngOnInit() {
-    this.formGroup = this.formService.createFormGroup(this.formModel);
+    this.formGroup = this.formService.createFormGroup(this.formModel, { asyncValidator: customAsyncFormGroupValidator });
   }
 
   onSubmit() {

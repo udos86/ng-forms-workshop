@@ -1,5 +1,5 @@
-import { Directive, forwardRef, OnChanges, Input, Attribute } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
+import { Directive, forwardRef, OnChanges, Input, Attribute, SimpleChanges } from '@angular/core';
+import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl, ValidationErrors, Validators } from '@angular/forms';
 
 export function customForbiddenValidator(forbiddenValue: string): ValidatorFn {
 
@@ -27,8 +27,16 @@ export class CustomForbiddenValidatorDirective implements Validator, OnChanges {
 
   constructor(/*@Attribute('forbidden') public forbidden: string*/) { }
 
-  ngOnChanges() {
-    this.validatorFn = customForbiddenValidator(this.forbidden);
+  ngOnChanges(changes: SimpleChanges) {
+
+    if (changes['forbidden']) {
+
+      this.validatorFn = customForbiddenValidator(this.forbidden);
+
+    } else {
+
+      this.validatorFn = Validators.nullValidator;
+    }
   }
 
   validate(control: AbstractControl): ValidationErrors | null {

@@ -23,39 +23,31 @@
       </div>
 
       <!-- FIRST NAME -->
-      <div class="form-group" [class.has-error]="!inputFirstName.valid && inputFirstName.touched">
+      <div class="form-group">
 
         <label for="firstName" class="col-sm-3 control-label">First Name</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required [(ngModel)]="formModel.firstName"
-            #inputFirstName="ngModel">
-          <!-- VALIDATION MESSAGE APPROACH A: Direct static template logic -->
-          <p *ngIf="inputFirstName.hasError('required') && inputFirstName.touched" class="help-block">Field is required</p>
+          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" [(ngModel)]="formModel.firstName">
         </div>
 
       </div>
 
       <!-- LAST NAME -->
-      <div class="form-group" [class.has-error]="!inputLastName.valid && inputLastName.touched">
+      <div class="form-group">
 
         <label for="lastName" class="col-sm-3 control-label">Last Name</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required forbidden="Trump" [(ngModel)]="formModel.lastName"
-            #inputLastName="ngModel">
-          <!-- VALIDATION MESSAGE APPROACH B: Encapsulated logic in a custom component -->
-          <validation-message [control]="inputLastName.control"></validation-message>
+          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" [(ngModel)]="formModel.lastName">
         </div>
 
       </div>
 
       <!-- EMAIL -->
-      <div class="form-group" [class.has-error]="!inputEmail.valid && inputEmail.touched">
+      <div class="form-group">
 
         <label for="email" class="col-sm-3 control-label">E-Mail</label>
         <div class="col-sm-9">
-          <!-- VALIDATION MESSAGE APPROACH C: Dynamic component -->
-          <input type="text" class="form-control" id="email" name="email" placeholder="E-Mail" required [(ngModel)]="formModel.email"
-          #inputEmail="ngModel" [dynamicValidationMessage]="inputEmail.control" >
+          <input type="text" class="form-control" id="email" name="email" placeholder="E-Mail" [(ngModel)]="formModel.email">
         </div>
 
       </div>

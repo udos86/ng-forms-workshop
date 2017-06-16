@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { fadeIn, fadeOut } from './../animations';
 
@@ -28,7 +28,7 @@ export class TemplateFormComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {console.log(this.form); }
 
   onSubmit() {
     this.form.reset();

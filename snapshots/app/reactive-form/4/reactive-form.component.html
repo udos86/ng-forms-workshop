@@ -1,0 +1,94 @@
+<div class="container-fluid container-scroll overflow-hidden" [@fadeIn]="" [@fadeOut]="">
+
+  <div class="form-container">
+
+    <h1 class="text-center">Reactive Form</h1>
+
+    <form class="form-horizontal" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+      <!-- DEGREE -->
+      <div class="form-group">
+
+        <label for="degree" class="col-sm-3 control-label">Degree</label>
+        <div class="col-sm-5">
+          <select class="form-control" id="title" formControlName="degree">
+            <option value="BA">Bachelor of Arts (B.A.)</option>
+            <option value="BS">Bachelor of Science (B.S.)</option>
+            <option value="MA">Master of Arts (M.A.)</option>
+            <option value="MS">Master of Science (M.S.)</option>
+            <option value="PhD">Doctor of Philosophy (Ph.D.)</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- FIRST NAME -->
+      <div class="form-group" [class.has-error]="!formGroup.get('firstName').valid && formGroup.get('firstName').touched">
+
+        <label for="firstName" class="col-sm-3 control-label">First Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="First Name">
+          <!-- VALIDATION MESSAGE APPROACH A: Direct static template logic -->
+          <p *ngIf="formGroup.get('firstName').hasError('required') && formGroup.get('firstName').touched" class="help-block">Field is required</p>
+        </div>
+
+      </div>
+
+      <!-- LAST NAME -->
+      <div class="form-group" [class.has-error]="!formGroup.get('lastName').valid && formGroup.get('lastName').touched">
+
+        <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Last Name">
+          <!-- VALIDATION MESSAGE APPROACH B: Encapsulated logic in a custom component -->
+          <validation-message [control]="formGroup.get('lastName')"></validation-message>
+        </div>
+
+      </div>
+
+      <!-- EMAIL -->
+      <div class="form-group" [class.has-error]="!formGroup.get('email').valid && formGroup.get('email').touched">
+
+        <label for="email" class="col-sm-3 control-label">E-Mail</label>
+        <div class="col-sm-9">
+          <!-- VALIDATION MESSAGE APPROACH C: Dynamic component -->
+          <input type="text" class="form-control" id="email" formControlName="email" placeholder="E-Mail" [dynamicValidationMessage]="formGroup.get('email')">
+        </div>
+
+      </div>
+
+      <!-- ZIP CODE / CITY -->
+      <div class="form-group" formGroupName="address">
+
+        <label for="zipCode" class="col-sm-3 control-label">Zip Code</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" id="zipCode" formControlName="zipCode" placeholder="ZIP">
+        </div>
+
+        <label for="city" class="col-sm-1 control-label">City</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="city" formControlName="city" placeholder="City">
+        </div>
+
+      </div>
+
+      <!-- ACCEPT -->
+      <div class="form-group">
+
+        <div class="col-sm-offset-3 col-sm-10">
+          <div class="checkbox">
+            <label><input type="checkbox" formControlName="confirm">Confirm</label>
+          </div>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-primary col-sm-offset-3" [disabled]="!formGroup.valid">Send</button>
+
+    </form>
+
+    <pre>{{formGroup.value | json}}</pre>
+
+  </div>
+
+</div>
