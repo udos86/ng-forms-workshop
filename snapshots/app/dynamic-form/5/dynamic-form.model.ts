@@ -55,7 +55,7 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
                 required: null
             },
             errorMessages: {
-                required: "Field {{ id }} is required"
+                required: "Field is required"
             }
         },
         {
@@ -81,7 +81,7 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
             },
             errorMessages: {
                 required: "Field is required",
-                forbidden: "Current value of field is forbidden"
+                forbidden: "Field value is forbidden"
             }
         },
         {
@@ -100,7 +100,13 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
         {
             id: "email",
             label: "E-Mail",
-            placeholder: "E-Mail"
+            placeholder: "E-Mail",
+            validators: {
+                required: null
+            },
+            errorMessages: {
+                required: "Field {{ id }} is required"
+            }
         },
         {
             element: {
@@ -108,7 +114,8 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
             },
             grid: {
                 label: "col-sm-3",
-                control: "col-sm-9"
+                control: "col-sm-9",
+                errors: "col-sm-9 col-sm-offset-3"
             }
         }
     ),

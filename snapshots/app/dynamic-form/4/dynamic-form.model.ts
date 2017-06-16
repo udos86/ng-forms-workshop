@@ -58,8 +58,7 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
             },
             grid: {
                 label: "col-sm-3",
-                control: "col-sm-9",
-                errors: "col-sm-9 col-sm-offset-3"
+                control: "col-sm-9"
             }
         }
     ),
@@ -76,8 +75,7 @@ export const FORM_MODEL: DynamicFormControlModel[] = [
             },
             grid: {
                 label: "col-sm-3",
-                control: "col-sm-9",
-                errors: "col-sm-9 col-sm-offset-3"
+                control: "col-sm-9"
             }
         }
     ),
