@@ -17,6 +17,7 @@ import { CustomForbiddenValidatorDirective, customForbiddenValidator } from './v
 import { DynamicValidationMessageDirective } from './validation/validation-message/dynamic-validation-message.directive';
 import { customAsyncFormGroupValidator } from "app/validation/validators/custom-async-form-group-validator";
 import { CustomFormControlComponent } from './custom-form-control/custom-form-control.component';
+import { ReactiveSearchComponent } from './reactive-search/reactive-search.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CustomFormControlComponent } from './custom-form-control/custom-form-co
     ValidationMessageComponent,
     CustomForbiddenValidatorDirective,
     DynamicValidationMessageDirective,
-    CustomFormControlComponent
+    CustomFormControlComponent,
+    ReactiveSearchComponent
   ],
   imports: [
     BrowserModule,

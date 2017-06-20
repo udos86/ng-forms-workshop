@@ -1,0 +1,33 @@
+<div class="container-fluid container-scroll overflow-hidden">
+
+  <div class="form-container">
+
+    <h1 class="text-center">Reactive Music Search</h1>
+
+    <form class="form-horizontal" [formGroup]="formGroup">
+
+      <div class="form-group">
+
+        <label for="search" class="col-sm-3 control-label">Search</label>
+        <div class="col-sm-9">
+          <input type="search" class="form-control" id="search" formControlName="search" placeholder="Search">
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+  <ul>
+
+    <li *ngFor="let item of data$ | async">
+
+      <img [attr.src]="item.artworkUrl100">
+      <span>{{ item.collectionName }}</span>
+
+    </li>
+
+  </ul>
+
+</div>

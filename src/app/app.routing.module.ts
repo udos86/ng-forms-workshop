@@ -1,3 +1,4 @@
+import { ReactiveSearchComponent } from './reactive-search/reactive-search.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TemplateFormComponent } from './template-form/template-form.component';
@@ -17,9 +18,14 @@ const APP_ROUTES: Routes = [
     {
         path: "reactive-form",
         component: ReactiveFormComponent,
-    }, {
+    }, 
+    {
         path: "dynamic-form",
         component: DynamicFormComponent,
+    },
+    {
+        path: "reactive-search",
+        component: ReactiveSearchComponent
     }
 ];
 
