@@ -13,7 +13,7 @@ export class DynamicValidationMessageDirective {
   componentRef: ComponentRef<ValidationMessageComponent>;
   componentInstance: ValidationMessageComponent
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, public viewContainerRef: ViewContainerRef) {
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef) {
     this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(ValidationMessageComponent);
   }
 }

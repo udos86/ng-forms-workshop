@@ -23,7 +23,7 @@ export class CustomForbiddenValidatorDirective implements Validator, OnChanges {
 
   @Input() forbidden: string;
 
-  validatorFn: (control: AbstractControl) => ValidationErrors | null;
+  validatorFn: ValidatorFn;
 
   constructor(/*@Attribute('forbidden') public forbidden: string*/) { }
 

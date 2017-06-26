@@ -17,7 +17,7 @@ export class CustomFormControlComponent implements OnInit, ControlValueAccessor 
 
   private onChange: (value: any) => void = () => { };
 
-  private onTouched = () => { };
+  private onTouched: () => any = () => { };
 
   value: number;
 
