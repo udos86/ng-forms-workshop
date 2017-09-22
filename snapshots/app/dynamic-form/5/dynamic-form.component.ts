@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from "@angular/forms";
-import { DynamicFormControlModel, DynamicFormService } from "@ng2-dynamic-forms/core";
+import { DynamicFormControlModel, DynamicFormService } from "@ng-dynamic-forms/core";
 import { fadeIn, fadeOut } from './../animations';
 import { FORM_MODEL } from './dynamic-form.model';
 import { customAsyncFormGroupValidator } from '../validation/validators/custom-async-form-group-validator';

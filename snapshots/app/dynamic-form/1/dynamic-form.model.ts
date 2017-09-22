@@ -1,3 +1,3 @@
-import { DynamicFormControlModel } from "@ng2-dynamic-forms/core";
+import { DynamicFormControlModel } from "@ng-dynamic-forms/core";
 
 export const FORM_MODEL: DynamicFormControlModel[] = []

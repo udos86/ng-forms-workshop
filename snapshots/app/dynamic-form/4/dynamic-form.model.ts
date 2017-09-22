@@ -4,7 +4,7 @@ import {
     DynamicInputModel,
     DynamicFormGroupModel,
     DynamicCheckboxModel
-} from "@ng2-dynamic-forms/core";
+} from "@ng-dynamic-forms/core";
 
 export const FORM_MODEL: DynamicFormControlModel[] = [
 
