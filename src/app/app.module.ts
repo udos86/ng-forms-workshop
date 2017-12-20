@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, NG_VALIDATORS } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DynamicFormsCoreModule } from '@ng-dynamic-forms/core';
 import { DynamicFormsBootstrapUIModule } from '@ng-dynamic-forms/ui-bootstrap';
 
@@ -36,7 +36,7 @@ import { ReactiveSearchComponent } from './reactive-search/reactive-search.compo
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClientModule,
     DynamicFormsCoreModule.forRoot(),
     DynamicFormsBootstrapUIModule,
     AppRoutingModule

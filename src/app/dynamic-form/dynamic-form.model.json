@@ -1,0 +1,90 @@
+[
+  {
+    "type": "SELECT",
+    "id": "degree",
+    "label": "Degree",
+    "options": [
+      {
+        "label": "Bachelor of Arts (B.A.)",
+        "value": "BA"
+      },
+      {
+        "label": "Bachelor of Science (B.S.)",
+        "value": "BS"
+      },
+      {
+        "label": "Master of Arts (M.A.)",
+        "value": "MA"
+      },
+      {
+        "label": "Master of Science (M.S.)",
+        "value": "MS"
+      },
+      {
+        "label": "Doctor of Philosophy (Ph.D.)",
+        "value": "PhD"
+      }
+    ]
+  },
+  {
+    "type": "INPUT",
+    "id": "firstName",
+    "label": "First Name",
+    "placeholder": "First Name",
+    "validators": {
+      "required": null
+    },
+    "errorMessages": {
+      "required": "Field is required"
+    }
+  },
+  {
+    "type": "INPUT",
+    "id": "lastName",
+    "label": "Last Name",
+    "placeholder": "Last Name",
+    "validators": {
+      "required": null,
+      "customForbiddenValidator": "Trump"
+    },
+    "errorMessages": {
+      "required": "Field is required",
+      "forbidden": "Field value is forbidden"
+    }
+  },
+  {
+    "type": "INPUT",
+    "id": "email",
+    "label": "E-Mail",
+    "placeholder": "E-Mail",
+    "validators": {
+      "required": null
+    },
+    "errorMessages": {
+      "required": "Field {{ id }} is required"
+    }
+  },
+  {
+    "type": "GROUP",
+    "id": "address",
+    "group": [
+      {
+        "type": "INPUT",
+        "id": "zipCode",
+        "label": "Zip Code",
+        "placeholder": "ZIP"
+      },
+      {
+        "type": "INPUT",
+        "id": "city",
+        "label": "City",
+        "placeholder": "City"
+      }
+    ]
+  },
+  {
+    "type": "CHECKBOX",
+    "id": "confirm",
+    "label": "Confirm"
+  }
+]

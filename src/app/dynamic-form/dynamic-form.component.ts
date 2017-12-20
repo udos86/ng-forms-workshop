@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { FormGroup } from "@angular/forms";
 import { DynamicFormControlModel, DynamicFormService, DynamicFormLayout } from "@ng-dynamic-forms/core";
 import { fadeIn, fadeOut } from './../animations';
@@ -14,14 +15,19 @@ import { customAsyncFormGroupValidator } from '../validation/validators/custom-a
 })
 export class DynamicFormComponent implements OnInit {
 
-  formModel: DynamicFormControlModel[] = FORM_MODEL;
+  formModel: DynamicFormControlModel[];// = FORM_MODEL;
   formGroup: FormGroup;
   formLayout: DynamicFormLayout = FORM_LAYOUT;
 
-  constructor(private formService: DynamicFormService) { }
+  constructor(private http: HttpClient, private formService: DynamicFormService) { }
 
   ngOnInit() {
-    this.formGroup = this.formService.createFormGroup(this.formModel, { asyncValidators: customAsyncFormGroupValidator });
+
+    this.http.get<object[]>('./app/dynamic-form/dynamic-form.model.json').subscribe(formModelJson => {
+
+      this.formModel = this.formService.fromJSON(formModelJson);
+      this.formGroup = this.formService.createFormGroup(this.formModel, { asyncValidators: customAsyncFormGroupValidator });
+    });
   }
 
   onSubmit() {

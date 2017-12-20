@@ -4,15 +4,19 @@
 
     <h1 class="text-center">Dynamic Form</h1>
 
-    <form class="form-horizontal" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <ng-container *ngIf="formGroup">
 
-      <dynamic-bootstrap-form [group]="formGroup" [model]="formModel" [layout]="formLayout"></dynamic-bootstrap-form>
+      <form class="form-horizontal" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
-      <button type="submit" class="btn btn-primary col-sm-offset-3" [disabled]="!formGroup.valid">Send</button>
+        <dynamic-bootstrap-form [group]="formGroup" [model]="formModel" [layout]="formLayout"></dynamic-bootstrap-form>
 
-    </form>
+        <button type="submit" class="btn btn-primary col-sm-offset-3" [disabled]="!formGroup.valid">Send</button>
 
-    <pre>{{formGroup.value | json}}</pre>
+      </form>
+
+      <pre>{{formGroup.value | json}}</pre>
+
+    </ng-container>
 
   </div>
 
