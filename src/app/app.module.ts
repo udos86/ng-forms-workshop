@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, NG_VALIDATORS } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DynamicFormsCoreModule } from '@ng-dynamic-forms/core';
+import { DynamicFormsCoreModule, DYNAMIC_VALIDATORS, Validator, ValidatorFactory } from '@ng-dynamic-forms/core';
 import { DynamicFormsBootstrapUIModule } from '@ng-dynamic-forms/ui-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -44,7 +44,11 @@ import { ReactiveSearchComponent } from './reactive-search/reactive-search.compo
   entryComponents: [ValidationMessageComponent],
   providers: [
     { provide: NG_VALIDATORS, useValue: customForbiddenValidator, multi: true },
-    { provide: NG_VALIDATORS, useValue: customAsyncFormGroupValidator, multi: true }
+    { provide: NG_VALIDATORS, useValue: customAsyncFormGroupValidator, multi: true },
+    { provide: DYNAMIC_VALIDATORS, useValue: new Map<string, Validator | ValidatorFactory>([
+        ["customForbiddenValidator", customForbiddenValidator],
+        ["customAsyncFormGroupValidator", customAsyncFormGroupValidator]
+    ])}
   ],
   bootstrap: [AppComponent]
 })

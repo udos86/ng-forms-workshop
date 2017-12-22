@@ -24,7 +24,6 @@ export class DynamicFormComponent implements OnInit {
   ngOnInit() {
 
     this.http.get<object[]>('./app/dynamic-form/dynamic-form.model.json').subscribe(formModelJson => {
-
       this.formModel = this.formService.fromJSON(formModelJson);
       this.formGroup = this.formService.createFormGroup(this.formModel, { asyncValidators: customAsyncFormGroupValidator });
     });
